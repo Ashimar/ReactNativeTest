@@ -29,7 +29,7 @@ export default class PicturePage extends Component {
 
         <Text style = {styles.headText}>2,xcode项目中的图片</Text>
         <Text >{urlStr}</Text>
-        <Image source={{uri:'2'}} style={{height:100,width:200}} />
+        <Image source={{uri:'segment_1'}} style={{height:100,width:200,backgroundColor:'red'}} />
 
         <Text style = {styles.headText}>3,网络图片</Text>
         <Text>很多要在App中显示的图片并不能在编译的时候获得，又或者有时候需要动态载入来减少打包后的二进制文件的大小。这些时候，与静态资源不同的是，你需要手动指定图片的尺寸{"source = {{uri:'http://....}}"}</Text>

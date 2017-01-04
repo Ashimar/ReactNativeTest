@@ -9,6 +9,8 @@ import {
 
 } from 'react-native';
 
+import TimerRollPage from './TimerRollPage.js';
+
 var Dimensions = require('Dimensions');
 var ScreenWidth = Dimensions.get('window').width;
 var count = 0;
@@ -85,6 +87,7 @@ export default class TimerPage extends Component {
 
         <Text style={styles.timerText}>计时器计数：{this.state.sum}</Text>
 
+        
         <View style={styles.timerView}>
           <TouchableHighlight
             onPress = {()=>this.timerStart()}
@@ -101,8 +104,11 @@ export default class TimerPage extends Component {
           </TouchableHighlight>
 
         </View>
-
+        <TimerRollPage />
+        <View style= {{backgroundColor:'orange',height:60,}}></View>
       </View>
+
+      
     );
   }
 }
@@ -139,4 +145,5 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: 5,
   },
+
 });
