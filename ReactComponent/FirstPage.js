@@ -26,7 +26,7 @@ export default class FirstPage extends Component {
   }
 
   _genRows(){
-    const dataBlob = ['进阶指南','使用指南(iOS)'];
+    const dataBlob = ['进阶指南','使用指南(iOS)','组件'];
     return dataBlob;
   }
 
