@@ -13,6 +13,8 @@ import {
 
 import AnimationOfparallel from './AnimationOfparallel.js'
 import AboutEasingPage from './AboutEasingPage.js'  // 跳转到easing 界面
+import AnimationOfSequence from './AnimationOfSequence.js'
+import AnimationOfStagger from './AnimationOfStagger.js'
 
 var Dimensions = require('Dimensions');
 var ScreenHeight = Dimensions.get('window').height;
@@ -108,7 +110,6 @@ export default class AnimationPage extends Component {
     })
 
     return (
-      <ScrollView>
         <Animated.View    // Special animatable View
           style={{opacity: this.state.fadeAnim, // Binds directly
                    transform: [{
@@ -117,12 +118,12 @@ export default class AnimationPage extends Component {
                        outputRange: [ScreenHeight, 0]  // 0 : 150, 0.5 : 75, 1 : 0
                      }),
                    }],
-                   backgroundColor:'orange',
                    height:100,
                    marginTop:64,
                    flex:1,
                 }} // binds
           >
+            <ScrollView>
             <Text>1、Animated.timing 创建的旋转动画</Text>
             <Text> 同时开始一个动画数组里的全部动画。默认情况下，如果有任何一个动画停止了，其余的也会被停止。你可以通过stopTogether 选项来改变这个效果。</Text>
             <Animated.Image
@@ -156,10 +157,17 @@ export default class AnimationPage extends Component {
 
             <Text>4. Animated.parallel()</Text>
             <Text>Animated.parallel() 会同时开始一个动画数组里的全部动画。</Text>
-            <AnimationOfparallel style={{height:200,}}/>
+            <View
+              style = {{height:600}}
+            >
+              <AnimationOfparallel/>
 
+              <AnimationOfSequence style={{height:200,marginTop:50}} />
+              <AnimationOfStagger />
+            </View>
+
+            </ScrollView>
           </Animated.View>
-        </ScrollView>
     );
   }
 }

@@ -1,3 +1,5 @@
+
+'use strict';
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -6,7 +8,8 @@ import {
   Navigator,
   ListView,
   TouchableHighlight,
-  Dimensions
+  Dimensions,
+  Buffer,
 } from 'react-native';
 
 import TimerPage from './TimerPage.js' // 计时器
@@ -17,6 +20,8 @@ import AnimationPage from './AnimationPage.js'  // 动画
 import DirectManipulation from './DirectManipulation.js' //
 
 var ScreenWidth = Dimensions.get('window').width;
+
+
 // 使用Component的好处是, 可以自动生成注释
 // export命令用于用户自定义模块，规定对外接口；
 export default class BeginnerPage extends Component {
@@ -24,6 +29,7 @@ export default class BeginnerPage extends Component {
   constructor(props) {
     super (props);
     const ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});
+
     this.state = {
       dataSource: ds.cloneWithRows(this._genRows()),
     };
@@ -33,6 +39,7 @@ export default class BeginnerPage extends Component {
   */
   _genRows(){
     const dataBlob = ['颜色','图片','处理触摸','动画','无障碍功能','定时器','直接操作','调试','自动化测试' ,'JavaScript 环境','性能','升级','特定平台代码','手势响应系统'];
+
     return dataBlob;
   }
   // 绘制 row
@@ -96,12 +103,11 @@ export default class BeginnerPage extends Component {
     return (
       <View style={styles.container}>
         <ListView
-          contentContainerStyle={styles.listView}
-          //  = {true}
           dataSource={this.state.dataSource}
           renderRow={this._renderRow.bind(this)}
+          contentContainerStyle={styles.listView}
         />
-    </View>
+      </View>
     );
   }
 }
@@ -132,7 +138,7 @@ var styles = StyleSheet.create({
   listView: {
     // marginTop:64,
     flex:1,
-    // justifyContent: 'space-around',
+    justifyContent: 'space-around',
     flexDirection: 'row',
     // backgroundColor: 'red',
     flexWrap:'wrap'

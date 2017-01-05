@@ -10,6 +10,7 @@ import {
 // import命令用于输入其他模块提供的功能，同时创造命名空间（namespace），防止函数名冲突。
 import SecondPage from "./SecondPage";
 import BeginnerPage from "./Beginner/BeginnerPage";
+import ComponentPage from './Component/ComponentPage.js';
 
 // 使用Component的好处是, 可以自动生成注释
 // export命令用于用户自定义模块，规定对外接口；
@@ -44,19 +45,19 @@ export default class FirstPage extends Component {
   _pressRow(rowID) {
     // alert("hellow"+rowID);
       console.log("~~~~~~~~~~~~~~"+rowID);
-      if (rowID == 0) {
+    switch (rowID) {
+      case '0':
         this.gotoNext(BeginnerPage,'Modal');
-      } else if (rowID == 1) {
-        // this.gotoNext();
-        alert("Hey!this 功能暂未开通 😆");
-      }
-    // switch ({rowID}) {
-    //   case 0:
-    //
-    //     break;
-    //   default:
-    //
-    // }
+        break;
+      case '1':
+
+        break;
+      case '2':
+        this.gotoNext(ComponentPage,'Modal');
+        break;
+      default:
+
+    }
   }
   // 填出提示框
   onPress() {

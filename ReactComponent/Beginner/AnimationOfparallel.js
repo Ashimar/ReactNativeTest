@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     // flex:1,
     backgroundColor:'red',
     alignItems:'center',
+    height:200,
   },
   text: {
     textAlign:'center',
