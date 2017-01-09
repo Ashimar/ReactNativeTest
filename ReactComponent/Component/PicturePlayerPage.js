@@ -8,7 +8,7 @@ import {
 
 } from 'react-native';
 
-import $.buffer from '$.buffer'
+var Buffer = require('Buffer');
 
 var ScreenWidth = Dimensions.get('window').width;
 
