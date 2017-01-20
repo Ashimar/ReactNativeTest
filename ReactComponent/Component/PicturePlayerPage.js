@@ -90,7 +90,7 @@ export default class PicturePlayerPage extends Component {
       imageViews.push(
         <TouchableHighlight key = {i} onPress = {()=>this.showPhotoView()} style={{flex:1, backgroundColor:'green'}}>
           <Image
-            style={{flex:1}}
+            style={{flex:2}}
             minimumZoomScale={0.5}
             maximumZoomScale={3}
             source = {{uri:images[i]}}

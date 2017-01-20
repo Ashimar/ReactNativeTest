@@ -30,8 +30,8 @@
     
 //    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];     // 打包
     
-//    NSString * strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";    // 模拟器
-    NSString * strUrl = @"http://192.168.0.121:8081/index.ios.bundle?platform=ios&dev=true";    // 真机调试
+    NSString * strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";    // 模拟器
+//    NSString * strUrl = @"http://192.168.0.121:8081/index.ios.bundle?platform=ios&dev=true";    // 真机调试
     NSURL * jsCodeLocation = [NSURL URLWithString:strUrl];
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
